@@ -1,0 +1,11 @@
+doctype html
+html ng-app="AngularCatalog" 
+  head
+    title AngularCatalog
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body
+    = yield
+    script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js" 
+    script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js" 
+    = javascript_include_tag "application"
