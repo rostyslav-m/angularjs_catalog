@@ -11,4 +11,17 @@ class ItemsController < ApplicationController
   def show
     render json: Item.find(params[:id])
   end
+
+  def new    
+  end
+
+  def create
+    respond_with Item.create!(params.permit(:name, :describe, :price))
+  end
+  
+#  def destroy
+#    respond_with Item.destroy(params[:id])
+#  end
+
+
 end

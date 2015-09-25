@@ -4,6 +4,9 @@ App.controller 'ItemsCtrl', ['$scope', 'Item', ($scope, Item) ->
   $scope.selectedItem = null
   $scope.selectedRow        = null
 
+
+  $scope.item = new Item()
+
   # Gather the Items and set the selected one to the first on success
   $scope.items = Item.query ->
     $scope.selectedItem = $scope.items[0]
@@ -13,4 +16,11 @@ App.controller 'ItemsCtrl', ['$scope', 'Item', ($scope, Item) ->
   $scope.showItem = (item, row) ->
     $scope.selectedItem = item
     $scope.selectedRow = row
+
+
+  $scope.addItem = ->
+    item = Item.save($scope.newItem)
+    $scope.items.push(item)
+    $scope.newItem = {}
+
 ]

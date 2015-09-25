@@ -1,4 +1,16 @@
 <div ng-controller="ItemsCtrl">
+
+  <form ng-submit="addItem()">
+    <b>Add new Item </b> Name:
+    <input type="text" ng-model="newItem.name">
+    Describe:
+    <input type="text" ng-model="newItem.describe">
+    Price:
+    <input type="text" ng-model="newItem.price">
+    <input type="submit" value="Add">
+  </form>
+
+
   <div id="item-list-container">
     <ul>
       <li ng-repeat="item in items"
