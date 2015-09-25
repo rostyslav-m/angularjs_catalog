@@ -2,9 +2,14 @@ div ng-controller="ItemsCtrl"
   #item-list-container
     ul
       li ng-click="showItem(item, $index)" ng-repeat=("item in items") 
-        h3 ng-class=("{active: $index == selectedRow}") {{item.name}} 
-          small ({{item.price}}  USD)
+        h3 ng-class=("{active: $index == selectedRow}") 
+          | {{item.name}} 
+          small
+            | ( {{item.price}}  USD)
   #item-view-container ng-show="selectedItem" 
-    h2  {selectedItem.name} 
-    p  {selectedItem.describe} 
-    p  {selectedItem.price}  USD
+    h2
+      | {{selectedItem.name}} 
+    p
+      | {{selectedItem.describe}}
+    p
+      | {{selectedItem.price}} USD
